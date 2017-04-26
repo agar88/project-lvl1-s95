@@ -12,9 +12,9 @@ export const evenGame = () => {
   const minNum = 1;
   const maxNum = 100;
 
-  const rules = 'Answer "yes" if number even otherwise answer "no".';
+  const rules = 'Answer "yes" if number even otherwise answer "no".\n';
   const userName = askName(rules);
-  console.log(`Hello, ${userName}!`);
+  console.log(`Hello, ${userName}!\n`);
 
   const iter = (count) => {
     if (count > 3) {
