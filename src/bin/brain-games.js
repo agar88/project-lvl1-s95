@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import greeting from '..';
+import { greeting } from '..';
 
-console.log(greeting());
+const userName = greeting('');
+console.log(`Hello, ${userName}!`);
