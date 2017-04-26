@@ -1,6 +1,6 @@
 {
   "name": "brain-games-agar88",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "",
   "bin": {
@@ -18,5 +18,8 @@
     "babel-core": "*",
     "babel-preset-env": "*",
     "babel-preset-stage-0": "*"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.7"
   }
 }
