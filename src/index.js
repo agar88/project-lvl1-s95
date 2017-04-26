@@ -1,15 +1,20 @@
 import readlineSync from 'readline-sync';
 
-export const greeting = (message) => {
+export const askName = () => {
   console.log('Welcome to the Brain Games!');
-  console.log(message);
   return readlineSync.question('May I have your name? ');
 };
 
-export const evenGame = (minNum, maxNum) => {
-  const rules = 'Answer "yes" if number even otherwise answer "no".';
-  const userName = greeting(rules);
+export const greeting = () => `Hello, ${askName()}!`;
+
+export const evenGame = () => {
+  const minNum = 1;
+  const maxNum = 100;
+
+  const userName = askName();
   console.log(`Hello, ${userName}!`);
+  console.log('Answer "yes" if number even otherwise answer "no".');
+
   const iter = (count) => {
     if (count > 3) {
       return `Congratulations, ${userName}!`;
