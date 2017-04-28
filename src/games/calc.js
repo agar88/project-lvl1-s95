@@ -1,31 +1,60 @@
-import { randomNumGenerator } from '..';
+import { gameFlow, makeRandomNum } from '..';
 
-export default (minNum, maxNum) => {
-  const getSymbol = (markerOfOperation) => {
-    if (markerOfOperation === 1) {
-      return '+';
-    } else if (markerOfOperation === 2) {
-      return '-';
+const rules = 'What is the result of the expression?\n';
+
+const makeCondition = () => {
+  const makeSign = () => {
+    const markerOfOperation = makeRandomNum(1, 3);
+    switch (markerOfOperation) {
+      case 1:
+        return '+';
+      case 2:
+        return '-';
+      default:
+        return '*';
     }
-    return '*';
   };
 
-  const operation = (num1, num2, markerOfOperation) => {
-    if (markerOfOperation === 1) {
-      return num1 + num2;
-    } else if (markerOfOperation === 2) {
-      return num1 - num2;
+  const number1 = makeRandomNum(1, 100);
+  const number2 = makeRandomNum(1, 100);
+  const sign = makeSign();
+
+  return (request) => {
+    switch (request) {
+      case 'getNum1':
+        return number1;
+      case 'getNum2':
+        return number2;
+      default:
+        return sign;
     }
-    return num1 * num2;
+  };
+};
+
+const convertConditionToText = (condition) => {
+  const textOfNum1 = condition('getNum1');
+  const textOfNum2 = condition('getNum2');
+  const textOfSign = condition('getSign');
+  return `${textOfNum1} ${textOfSign} ${textOfNum2}`;
+};
+
+const calculateCorrectAnswer = (condition) => {
+  const operation = (num1, num2, sign) => {
+    switch (sign) {
+      case '+':
+        return num1 + num2;
+      case '-':
+        return num1 - num2;
+      default:
+        return num1 * num2;
+    }
   };
 
-  const number1 = randomNumGenerator(minNum, maxNum);
-  const number2 = randomNumGenerator(minNum, maxNum);
-  const markerOfOperation = randomNumGenerator(1, 3);
-  const correctAnswer = String(operation(number1, number2, markerOfOperation));
-  const symbol = getSymbol(markerOfOperation);
-
-  console.log(`Question: ${number1} ${symbol} ${number2}`);
-
+  const number1 = condition('getNum1');
+  const number2 = condition('getNum2');
+  const sign = condition('getSign');
+  const correctAnswer = operation(number1, number2, sign);
   return correctAnswer;
 };
+
+export default () => gameFlow(rules, makeCondition, convertConditionToText, calculateCorrectAnswer);

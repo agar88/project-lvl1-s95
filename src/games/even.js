@@ -1,8 +1,14 @@
-import { randomNumGenerator } from '..';
+import { gameFlow, makeRandomNum } from '..';
 
-export default (minNum, maxNum) => {
-  const number = randomNumGenerator(minNum, maxNum);
-  const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
-  console.log(`Question: ${number}`);
+const rules = 'Answer "yes" if number even otherwise answer "no".\n';
+
+const makeCondition = () => makeRandomNum(1, 100);
+
+const convertConditionToText = condition => String(condition);
+
+const calculateCorrectAnswer = (condition) => {
+  const correctAnswer = condition % 2 === 0 ? 'yes' : 'no';
   return correctAnswer;
 };
+
+export default () => gameFlow(rules, makeCondition, convertConditionToText, calculateCorrectAnswer);
