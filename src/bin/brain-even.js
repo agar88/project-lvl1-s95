@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import evenGameLauncher from '../games/even';
+import launcher from '../games/even';
 
-evenGameLauncher();
+launcher();

@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import gcdGameLauncher from '../games/gcd';
+import launcher from '../games/gcd';
 
-gcdGameLauncher();
+launcher();

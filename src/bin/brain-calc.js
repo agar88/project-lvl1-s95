@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import calcGameLauncher from '../games/calc';
+import launcher from '../games/calc';
 
-calcGameLauncher();
+launcher();
