@@ -1,1 +1,3 @@
-export default (min, max) => Math.round(((Math.random() * (max - min)) + min));
+const makeRandomNum = (min, max) => Math.round(((Math.random() * (max - min)) + min));
+
+export default makeRandomNum;
