@@ -31,7 +31,8 @@ const calculateCorrectAnswer = (condition) => {
     return num1 > num2 ? iter(difference, num2) : iter(num1, difference);
   };
 
-  return iter(number1, number2);
+  const result = iter(number1, number2);
+  return result;
 };
 
 export default () => gameFlow(rules, makeCondition, convertConditionToText, calculateCorrectAnswer);
