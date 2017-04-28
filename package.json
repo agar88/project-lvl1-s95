@@ -1,12 +1,12 @@
 {
   "name": "brain-games-agar88",
-  "version": "0.3.0",
+  "version": "0.3.5",
   "description": "",
   "main": "",
   "bin": {
-    "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
-    "brain-calc": "dist/bin/brain-calc.js"
+    "brain-calc": "dist/bin/brain-calc.js",
+    "brain-gcd": "dist/bin/brain-gcd.js"
   },
   "scripts": {
     "babel-node": "babel-node",
