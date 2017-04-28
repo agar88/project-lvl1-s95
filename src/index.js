@@ -1,8 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const makeRandomNum = (min, max) => Math.round(((Math.random() * (max - min)) + min));
-
-export const gameFlow = (rules, makeCondition, convertConditionToText, calculateCorrectAnswer) => {
+export default (rules, game) => {
   console.log('Welcome to the Brain Games!');
   console.log(rules);
   const userName = readlineSync.question('May I have your name? ');
@@ -12,11 +10,10 @@ export const gameFlow = (rules, makeCondition, convertConditionToText, calculate
     if (count > 3) {
       return `Congratulations, ${userName}!`;
     }
-
-    const condition = makeCondition();
-    const textOfCondition = convertConditionToText(condition);
+    const dataRound = game();
+    const textOfCondition = dataRound('getText');
+    const correctAnswer = String(dataRound('getAnswer'));
     console.log(`Question: ${textOfCondition}`);
-    const correctAnswer = String(calculateCorrectAnswer(condition));
     const playerAnswer = readlineSync.question('Your answer: ');
 
     if (playerAnswer !== correctAnswer) {

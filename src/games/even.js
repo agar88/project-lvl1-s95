@@ -1,4 +1,5 @@
-import { gameFlow, makeRandomNum } from '..';
+import gameFlow from '..';
+import makeRandomNum from '../utils';
 
 const rules = 'Answer "yes" if number even otherwise answer "no".\n';
 
@@ -11,4 +12,17 @@ const calculateCorrectAnswer = (condition) => {
   return correctAnswer;
 };
 
-export default () => gameFlow(rules, makeCondition, convertConditionToText, calculateCorrectAnswer);
+const game = () => {
+  const condition = makeCondition();
+  const textOfCondition = convertConditionToText(condition);
+  const correctAnswer = calculateCorrectAnswer(condition);
+
+  return (request) => {
+    if (request === 'getText') {
+      return textOfCondition;
+    }
+    return correctAnswer;
+  };
+};
+
+export default () => gameFlow(rules, game);
