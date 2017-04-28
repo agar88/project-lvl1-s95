@@ -54,8 +54,8 @@ const calculateCorrectAnswer = (condition) => {
   const number1 = condition('getNum1');
   const number2 = condition('getNum2');
   const sign = condition('getSign');
-  const correctAnswer = operation(number1, number2, sign);
-  return correctAnswer;
+  const result = operation(number1, number2, sign);
+  return String(result);
 };
 
 const game = () => {

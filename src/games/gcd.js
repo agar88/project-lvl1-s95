@@ -33,7 +33,7 @@ const calculateCorrectAnswer = (condition) => {
   };
 
   const result = iter(number1, number2);
-  return result;
+  return String(result);
 };
 
 const game = () => {

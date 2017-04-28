@@ -12,7 +12,7 @@ export default (rules, game) => {
     }
     const dataRound = game();
     const textOfCondition = dataRound('getText');
-    const correctAnswer = String(dataRound('getAnswer'));
+    const correctAnswer = dataRound('getAnswer');
     console.log(`Question: ${textOfCondition}`);
     const playerAnswer = readlineSync.question('Your answer: ');
 
