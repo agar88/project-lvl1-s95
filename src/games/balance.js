@@ -1,7 +1,7 @@
 import gameFlow from '..';
 import makeRandomNum from '../utils';
 
-const rules = 'Balance the given number.';
+const description = 'Balance the given number.';
 
 const normalization = (digits) => {
   const newDigits = digits;
@@ -25,9 +25,9 @@ const game = () => {
   const normalizedDigits = normalization(digits);
   const sortedDigits = normalizedDigits.sort();
 
-  const problem = String(number);
+  const question = String(number);
   const correctAnswer = sortedDigits.join('');
-  return [problem, correctAnswer];
+  return [question, correctAnswer];
 };
 
-export default () => gameFlow(rules, game);
+export default () => gameFlow(description, game);

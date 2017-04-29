@@ -1,7 +1,7 @@
 import gameFlow from '..';
 import makeRandomNum from '../utils';
 
-const rules = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
 const game = () => {
   const number1 = makeRandomNum(1, 100);
@@ -15,9 +15,9 @@ const game = () => {
     return num1 > num2 ? iter(difference, num2) : iter(num1, difference);
   };
 
-  const problem = `${number1} ${number2}`;
+  const question = `${number1} ${number2}`;
   const correctAnswer = iter(number1, number2);
-  return [problem, String(correctAnswer)];
+  return [question, String(correctAnswer)];
 };
 
-export default () => gameFlow(rules, game);
+export default () => gameFlow(description, game);

@@ -1,7 +1,7 @@
 import gameFlow from '..';
 import makeRandomNum from '../utils';
 
-const rules = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const game = () => {
   const number1 = makeRandomNum(1, 100);
@@ -26,8 +26,8 @@ const game = () => {
     // no default
   }
 
-  const problem = `${number1} ${sign} ${number2}`;
-  return [problem, String(correctAnswer)];
+  const question = `${number1} ${sign} ${number2}`;
+  return [question, String(correctAnswer)];
 };
 
-export default () => gameFlow(rules, game);
+export default () => gameFlow(description, game);
