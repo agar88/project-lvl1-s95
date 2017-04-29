@@ -1,28 +1,11 @@
 import gameFlow from '..';
 import makeRandomNum from '../utils';
 
-const rules = 'Find the greatest common divisor of given numbers.\n';
+const rules = 'Find the greatest common divisor of given numbers.';
 
-const makeCondition = () => {
+const game = () => {
   const number1 = makeRandomNum(1, 100);
   const number2 = makeRandomNum(1, 100);
-  return (request) => {
-    if (request === 'getNum1') {
-      return number1;
-    }
-    return number2;
-  };
-};
-
-const convertConditionToText = (condition) => {
-  const textOfNum1 = condition('getNum1');
-  const textOfNum2 = condition('getNum2');
-  return `${textOfNum1} ${textOfNum2}`;
-};
-
-const calculateCorrectAnswer = (condition) => {
-  const number1 = condition('getNum1');
-  const number2 = condition('getNum2');
 
   const iter = (num1, num2) => {
     if (num1 === num2) {
@@ -32,21 +15,9 @@ const calculateCorrectAnswer = (condition) => {
     return num1 > num2 ? iter(difference, num2) : iter(num1, difference);
   };
 
-  const result = iter(number1, number2);
-  return String(result);
-};
-
-const game = () => {
-  const condition = makeCondition();
-  const textOfCondition = convertConditionToText(condition);
-  const correctAnswer = calculateCorrectAnswer(condition);
-
-  return (request) => {
-    if (request === 'getText') {
-      return textOfCondition;
-    }
-    return correctAnswer;
-  };
+  const problem = `${number1} ${number2}`;
+  const correctAnswer = iter(number1, number2);
+  return [problem, String(correctAnswer)];
 };
 
 export default () => gameFlow(rules, game);

@@ -3,17 +3,15 @@ import readlineSync from 'readline-sync';
 export default (rules, game) => {
   console.log('Welcome to the Brain Games!');
   console.log(rules);
-  const userName = readlineSync.question('May I have your name? ');
+  const userName = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 
   const iter = (count) => {
     if (count > 3) {
       return `Congratulations, ${userName}!`;
     }
-    const dataRound = game();
-    const textOfCondition = dataRound('getText');
-    const correctAnswer = dataRound('getAnswer');
-    console.log(`Question: ${textOfCondition}`);
+    const [problem, correctAnswer] = game();
+    console.log(`Question: ${problem}`);
     const playerAnswer = readlineSync.question('Your answer: ');
 
     if (playerAnswer !== correctAnswer) {
