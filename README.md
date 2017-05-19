@@ -14,14 +14,14 @@
 
 ## Asciinema
 
-[![brain-even](https://asciinema.org/a/1oyjh6odpvjlowpwu5lzxyoou)
+[brain-even](https://asciinema.org/a/1oyjh6odpvjlowpwu5lzxyoou)
 
-[![brain-calc](https://asciinema.org/a/c7204pgggnytlvpca0whl45kf)
+[brain-calc](https://asciinema.org/a/c7204pgggnytlvpca0whl45kf)
 
-[![brain-gcd](https://asciinema.org/a/dg5u4kia8ty8bp6axqugd4fgq)
+[brain-gcd](https://asciinema.org/a/dg5u4kia8ty8bp6axqugd4fgq)
 
-[![brain-balance](https://asciinema.org/a/6ftaal6479kwob1z0pznl6i2o)
+[brain-balance](https://asciinema.org/a/6ftaal6479kwob1z0pznl6i2o)
 
-[![brain-progression](https://asciinema.org/a/abiq19xeuia60qi3ixwgcwung)
+[brain-progression](https://asciinema.org/a/abiq19xeuia60qi3ixwgcwung)
 
-[![brain-prime](https://asciinema.org/a/f3pzh3zuxshoqj5v4fgqj05qg)
+[brain-prime](https://asciinema.org/a/f3pzh3zuxshoqj5v4fgqj05qg)
