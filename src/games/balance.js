@@ -3,7 +3,7 @@ import makeRandomNum from '../utils';
 
 const description = 'Balance the given number.';
 
-const normalization = (digits) => {
+const balancing = (digits) => {
   const newDigits = digits;
   const minValue = Math.min.apply(null, newDigits);
   const maxValue = Math.max.apply(null, newDigits);
@@ -13,20 +13,19 @@ const normalization = (digits) => {
     const indexOfMax = newDigits.indexOf(maxValue);
     newDigits[indexOfMin] = minValue + 1;
     newDigits[indexOfMax] = maxValue - 1;
-    return normalization(newDigits);
+    return balancing(newDigits);
   }
 
-  return newDigits;
+  return newDigits.sort();
 };
 
 const game = () => {
   const number = makeRandomNum(10, 9999);
   const digits = String(number).split('').map(num => parseInt(num, 10));
-  const normalizedDigits = normalization(digits);
-  const sortedDigits = normalizedDigits.sort();
+  const balancedDigits = balancing(digits);
 
   const question = String(number);
-  const correctAnswer = sortedDigits.join('');
+  const correctAnswer = balancedDigits.join('');
   return [question, correctAnswer];
 };
 
