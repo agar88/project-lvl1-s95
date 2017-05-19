@@ -1,6 +1,6 @@
 {
   "name": "brain-games-agar88",
-  "version": "0.3.13",
+  "version": "0.3.14",
   "description": "",
   "main": "",
   "bin": {
@@ -17,8 +17,13 @@
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublish": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agar88/project-lvl1-s95.git"
+  },
   "author": "Eugene Lehanov",
   "license": "ISC",
+  "homepage": "https://github.com/agar88/project-lvl1-s95#readme",
   "devDependencies": {
     "babel-cli": "*",
     "babel-core": "*",
