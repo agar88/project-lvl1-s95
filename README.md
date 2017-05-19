@@ -1,5 +1,9 @@
 # Brain Games
 
+Training project.
+
+## Badges
+
 [![Code Climate](https://codeclimate.com/github/agar88/project-lvl1-s95/badges/gpa.svg)](https://codeclimate.com/github/agar88/project-lvl1-s95)
 
 [![Test Coverage](https://codeclimate.com/github/agar88/project-lvl1-s95/badges/coverage.svg)](https://codeclimate.com/github/agar88/project-lvl1-s95/coverage)
