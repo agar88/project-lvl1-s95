@@ -4,24 +4,21 @@ import makeRandomNum from '../utils';
 const description = 'Balance the given number.';
 
 const balancing = (digits) => {
-  const newDigits = digits;
-  const minValue = Math.min.apply(null, newDigits);
-  const maxValue = Math.max.apply(null, newDigits);
+  const min = digits.indexOf(Math.min(...digits));
+  const max = digits.indexOf(Math.max(...digits));
 
-  if (maxValue - minValue > 1) {
-    const indexOfMin = newDigits.indexOf(minValue);
-    const indexOfMax = newDigits.indexOf(maxValue);
-    newDigits[indexOfMin] = minValue + 1;
-    newDigits[indexOfMax] = maxValue - 1;
+  const newDigits = digits.slice();
+  if (digits[max] - digits[min] > 1) {
+    newDigits[min] += 1;
+    newDigits[max] -= 1;
     return balancing(newDigits);
   }
-
   return newDigits.sort();
 };
 
 const game = () => {
-  const number = makeRandomNum(10, 9999);
-  const digits = String(number).split('').map(num => parseInt(num, 10));
+  const number = makeRandomNum(100, 9999);
+  const digits = String(number).split('').map(num => +num);
   const balancedDigits = balancing(digits);
 
   const question = String(number);
